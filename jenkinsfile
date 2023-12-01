@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building the project"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    echo "Loading first.groovy script"
+                    def customFunction = load 'first.groovy'
+                    echo "Script loaded successfully"
+                    customFunction.myFunction()
+                }
+            }
+        }
+    }
+}
