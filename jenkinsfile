@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     echo "Loading first.groovy script"
-                    def customFunction = load 'first.groovy'
+                    def customFunction = load 'GroovyFile.groovy'
                     echo "Script loaded successfully"
                     customFunction.myFunction()
                 }
